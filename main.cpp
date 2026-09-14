@@ -2,13 +2,15 @@
 #include <fstream>
 #include <string>
 #include <vector>
-
+#include <print>
 
 
 class coder{
     public:
-        int n;
-        int k;
+        coder();
+        short int n;
+        short int k;
+        std::vector<std::vector<short int>> G ;
     private:
 
 };
@@ -45,7 +47,25 @@ int main(void){
         std::cout << "Первое число: " << n << std::endl;
         std::cout << "Второе число: " << k << std::endl;
     } else {
-        std::cerr << "Не удалось прочитать два числа из первой строки!" << std::endl;
+        std::cerr << "Не удалось !" << std::endl;
+    }
+    std::vector<std::vector<short int>> G(k, std::vector<short int>(n, 0));
+
+    for(int i = 0; i<k; i++){
+        for(int j = 0; j<n; j++){
+            file >> G[i][j];
+        }
+
+    }
+
+    
+
+    for(int i = 0; i<k; i++){
+        for(int j = 0; j<n; j++){
+            std::printf("Элемент матрицы под номером %d %d равен %d\n", i, j, G[i][j]);
+            
+        }
+
     }
 
     file.close();
