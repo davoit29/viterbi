@@ -7,7 +7,8 @@
 
 class coder{
     public:
-        coder();
+        coder(short int input_n, short int input_k, const std::vector<std::vector<short int>>& input_G) 
+        : n(input_n), k(input_k), G(input_G){}
         short int n;
         short int k;
         std::vector<std::vector<short int>> G ;
@@ -67,6 +68,7 @@ int main(void){
         }
 
     }
+    coder my_coder(n, k, G);
 
     file.close();
 
